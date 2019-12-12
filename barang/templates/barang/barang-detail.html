@@ -1,0 +1,32 @@
+{% extends 'barang/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="margin-atas">
+        </div>
+        <div class="home-white-space">
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-12 blog-pict">
+                <img class="" src="{{barang.img_produk}}" alt="">
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-12 blog-center">
+                <p><strong>
+                    {{barang.nama_produk}} 
+                </strong></p>
+                <p><span>
+                    Rp. {{barang.harga_produk}}
+                </span></p>
+                <p>
+                    Deskripsi Produk:
+                    <br>
+                    {{barang.deskripsi_produk}} 
+                </p>
+            </div>
+        </div>
+        <div class="home-white-space">
+        </div>      
+    </div>
+{% endblock %}

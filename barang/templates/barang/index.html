@@ -1,0 +1,37 @@
+{% extends 'barang/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="margin-atas">
+        </div>
+        <div class="home-white-space">
+        </div>
+        <div class="row row-home align-items-center">
+            <div class="col-md-12">
+                <div class="btn btn-link button-add-data">
+                    <a href="{% url 'add-barang' %}" class="btn btn-info button-add-data" role="button">Tambah Barang</a>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            {% for barang in barangs %}
+                <div class="col-md-4">
+                    <div class="item-produk">
+                        <img class="" src="{{barang.img_produk}}" alt="">
+                        <br>
+                        <br>
+                        <p><strong>
+                            {{barang.nama_produk}}
+                        </strong></p>
+                        <p>
+                            Rp. {{barang.harga_produk}}
+                        </p>
+                        <p>
+                            <a href="{% url 'barang-detail' barang.id %}">Lihat Details</a>
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>      
+    </div>
+{% endblock %}
